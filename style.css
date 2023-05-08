@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap");
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  margin: 0;
+  background: radial-gradient(
+    circle,
+    rgba(38, 70, 136, 1) 0%,
+    rgba(29, 53, 103, 1) 100%
+  );
+  overflow-x: hidden;
+  color: white;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: sora, Arial, Helvetica, sans-serif;
+  margin-bottom: 0px;
+}
+
+p {
+  font-family: sora, Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  margin: 0.5rem;
+}
+
+header {
+  text-align: center;
+}
+
+.wrap-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+}
+/*Other btns then play choices*/
+.gamebtn {
+  background: linear-gradient(
+    219deg,
+    rgba(116, 218, 226, 1) 0%,
+    rgba(239, 84, 128, 1) 100%
+  );
+  margin-top: 20px;
+  padding: 20px 120px 20px 120px;
+  border: 2px solid #5f1154;
+  border-radius: 10px;
+
+  align-self: center;
+
+  font-family: sora, Arial, Helvetica, sans-serif;
+  color: white;
+  font-weight: 500;
+  font-size: 2.5rem;
+}
+
+/*Area were we se the game taking plaxe*/
+.playArea {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+}
+.playArea img {
+  margin-top: 20px;
+}
+
+.playerbtns {
+  display: flex;
+  /*Changes to 50px on mobile*/
+  gap: 100px;
+  margin-bottom: 40px;
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+}
+
+#headline-playerChoice,
+#headline-computerChoice {
+  font-weight: 500;
+}
+
+.playChoice,
+img {
+  width: 150px;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+.displayScore {
+  text-align: center;
+  padding-inline: 30px;
+  margin-block: 10px;
+}
+.displayScore h2 {
+  margin-top: 5px;
+  padding-bottom: 5px;
+}
+
+.commentPanel {
+  font-family: sora, Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  color: #07d962;
+
+  font-size: 2rem;
+}
+
+/*END RESULT CONTAINER*/
+.endResultContainer {
+  display: none;
+  margin: auto;
+}
+
+.gameResult {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+  border-bottom: 3px solid white;
+}
+.gameResult img {
+  width: 400px;
+}
