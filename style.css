@@ -76,6 +76,7 @@ header {
   /*Changes to 50px on mobile*/
   gap: 100px;
   margin-bottom: 40px;
+  flex-wrap: wrap;
 }
 
 .btn {
@@ -123,6 +124,11 @@ img {
 .endResultContainer {
   display: none;
   margin: auto;
+  text-align: center;
+}
+
+.endResultContainer h3 {
+  margin-top: 10px;
 }
 
 .gameResult {
@@ -131,9 +137,68 @@ img {
   align-items: center;
   justify-content: center;
   padding-bottom: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   border-bottom: 3px solid white;
 }
 .gameResult img {
   width: 400px;
+}
+
+.endBtnContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.endStagebtn {
+  background: linear-gradient(
+    219deg,
+    rgba(116, 218, 226, 1) 0%,
+    rgba(239, 84, 128, 1) 100%
+  );
+  padding: 10px 40px;
+  color: white;
+  font-family: sora, Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  margin-top: 10px;
+  border: 2px solid #5f1154;
+  border-radius: 10px;
+}
+
+@media (max-width: 400px) {
+  header {
+    font-size: 0.8rem;
+  }
+  .playArea {
+    justify-content: flex-start;
+  }
+
+  .playerbtns {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .playerbtns img {
+    width: 100px;
+    margin-top: 0px;
+  }
+
+  .gameResult img {
+    width: 250px;
+  }
+
+  .displayComputerChoice img {
+    width: 100px;
+    margin-top: 0px;
+  }
+
+  .commentPanel {
+    font-size: 15px;
+  }
+
+  .displayScore h3,
+  h2 {
+    font-size: 15px;
+  }
 }

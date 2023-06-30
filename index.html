@@ -18,11 +18,13 @@
       <div id="endResultContainer" class="endResultContainer">
         <div class="gameResult">
           <img id="winnerImg" src="" alt="" />
-          <div class="line"></div>
         </div>
         <h3 id="displayWinner" class="commentPanel"></h3>
-        <button>Play Agin</button>
-        <button>Give Up</button>
+        <div class="endBtnContainer">
+          <button id="playAginBtn" onclick="restartGame()" class="endStagebtn">
+            Play Agin
+          </button>
+        </div>
       </div>
 
       <div id="playArea" class="playArea">
@@ -40,22 +42,24 @@
         </div>
         <div class="finalScoreBoard"></div>
 
-        <div class="displayComputerChoice">
+        <div id="displayComputerChoice" class="displayComputerChoice">
           <p id="headline-computerChoice"></p>
-          <img id="img-choice" src="" alt="computer choose" />
+          <img id="img-choice" src="" alt="" />
           <p id="showCompChoice"></p>
         </div>
-        <button id="gamebtn-el" class="gamebtn">Play</button>
+        <button id="gamebtn-el" onclick="startGame()" class="gamebtn">
+          Play
+        </button>
       </div>
 
       <div class="scoreboard">
         <div class="displayScore">
-          <h3>Player</h3>
+          <h3>Computer</h3>
           <h2 id="computer-score"></h2>
         </div>
         <div id="gameScore" class="commentPanel"></div>
         <div class="displayScore">
-          <h3>Computer</h3>
+          <h3>Player</h3>
           <h2 id="player-score"></h2>
         </div>
       </div>

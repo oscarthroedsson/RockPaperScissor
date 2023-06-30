@@ -1,34 +1,41 @@
 //Sätter variabler för att kunna spela
+const computerScore = document.querySelector("#computer-score");
+const playerScore = document.querySelector("#player-score");
+const playArea = document.getElementById("playArea");
+const endResultContainer = document.getElementById("endResultContainer");
+const roundMsg = document.getElementById("gameScore");
+const playbtn = document.getElementById("gamebtn-el");
+const computerHeadline = document.getElementById("headline-computerChoice");
+const playerHeadline = document.getElementById("headline-playerChoice");
+const playerBtns = document.querySelectorAll(".playerbtns button img");
+
+//varibaels that will change under the game
 let roundPlay = 0;
 let computerPoint = 0;
 let playerPoint = 0;
 let roundWinner = "";
 let playerChoose = "";
 let computerChoose = "";
-const computerScore = document.querySelector("#computer-score");
-const playerScore = document.querySelector("#player-score");
-const playArea = document.getElementById("playArea");
-const endResultContainer = document.getElementById("endResultContainer");
-const roundMsg = document.getElementById("gameScore");
 
-//Display the game view if the btn play is pressed
-const playbtn = document.getElementById("gamebtn-el");
-playbtn.addEventListener("click", function () {
-  const computerHeadline = document.getElementById("headline-computerChoice");
+function startGame() {
+  playbtn.addEventListener("click", handlePlayerChoice);
+}
+
+function handlePlayerChoice() {
   computerHeadline.textContent = "COMPUTER CHOOSE";
-  const playerHeadline = document.getElementById("headline-playerChoice");
   playerHeadline.textContent = "PICK YOUR WEAPON";
-});
+  playbtn.style.display = "none";
+
+  playerBtns.forEach((img) => {
+    img.addEventListener("click", (event) => {
+      const imgAlt = event.target.getAttribute("alt");
+      playGame(imgAlt);
+      displayCompChoice.style.display = "block";
+    });
+  });
+}
 
 //Listen to what the player choose
-const playerBtns = document.querySelectorAll(".playerbtns button img");
-
-playerBtns.forEach((img) => {
-  img.addEventListener("click", (event) => {
-    const imgAlt = event.target.getAttribute("alt");
-    playGame(imgAlt);
-  });
-});
 
 //computer choose a alternative and wright img is displayed
 function getComputerChoice() {
@@ -41,7 +48,7 @@ function getComputerChoice() {
   return computerChoose;
 }
 
-// Spelar spelet
+//Playing the game
 function playGame(playerChoose) {
   this.playerChoose = playerChoose;
   computerChoose = getComputerChoice();
@@ -113,11 +120,19 @@ function presentFinalScore(computerPoint, playerPoint) {
   }
 }
 
-function endGame() {
+const displayCompChoice = document.getElementById("displayComputerChoice");
+
+function restartGame() {
   roundPlay = 0;
   computerPoint = 0;
   playerPoint = 0;
-  // detta bör ske när vi trycker på att starta om spelet
   computerScore.innerHTML = 0;
   playerScore.innerHTML = 0;
+  playArea.style.display = "block";
+  roundMsg.style.display = "block";
+  displayCompChoice.style.display = "none";
+  endResultContainer.style.display = "none";
+  displayCompChoice.style.display = "none";
+
+  startGame();
 }
